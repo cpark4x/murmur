@@ -1,4 +1,4 @@
-# voicetype
+# murmur
 
 A CLI speech-to-text tool using local Whisper. Record from your microphone, transcribe locally, and optionally copy to clipboard.
 
@@ -12,16 +12,16 @@ pip install openai-whisper sounddevice numpy
 
 ```bash
 # Record and print transcription
-voicetype
+murmur
 
 # Record and copy to clipboard
-voicetype -c
+murmur -c
 
 # Use a different model (tiny/base/small/medium/large)
-voicetype -m medium
+murmur -m medium
 
 # Learn vocabulary from SuperWhisper recordings
-voicetype --learn
+murmur --learn
 ```
 
 ## Models

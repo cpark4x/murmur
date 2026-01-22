@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""voicetype - Speech to text using local Whisper.
+"""murmur - Speech to text using local Whisper.
 
 Usage:
-    voicetype           # Record and print to stdout
-    voicetype -c        # Record and copy to clipboard
-    voicetype -m medium # Use medium model for better quality
-    voicetype --learn   # Learn vocabulary from SuperWhisper recordings
+    murmur           # Record and print to stdout
+    murmur -c        # Record and copy to clipboard
+    murmur -m medium # Use medium model for better quality
+    murmur --learn   # Learn vocabulary from SuperWhisper recordings
 
 First run:
     The first time you use a model, Whisper will download it (~244MB for 'small').
@@ -25,7 +25,7 @@ import whisper
 SAMPLE_RATE = 16000
 MIN_AUDIO_LENGTH = 0.5  # Minimum seconds of audio required
 MODELS = ["tiny", "base", "small", "medium", "large"]
-CONFIG_DIR = Path.home() / ".config" / "voicetype"
+CONFIG_DIR = Path.home() / ".config" / "murmur"
 PROMPT_FILE = CONFIG_DIR / "prompt.txt"
 SUPERWHISPER_DIR = Path.home() / "Documents" / "superwhisper" / "recordings"
 
@@ -154,10 +154,10 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  voicetype              Record and print transcription
-  voicetype -c           Record and copy to clipboard
-  voicetype -c -m medium Use medium model, copy to clipboard
-  voicetype --learn      Learn your vocabulary from SuperWhisper
+  murmur              Record and print transcription
+  murmur -c           Record and copy to clipboard
+  murmur -c -m medium Use medium model, copy to clipboard
+  murmur --learn      Learn your vocabulary from SuperWhisper
 
 Models (quality/speed tradeoff):
   tiny   - Fastest, lowest quality
@@ -167,7 +167,7 @@ Models (quality/speed tradeoff):
   large  - Best quality, slowest
 
 Learning from SuperWhisper:
-  Run 'voicetype --learn' to extract your vocabulary and speaking
+  Run 'murmur --learn' to extract your vocabulary and speaking
   style from SuperWhisper recordings. This creates a prompt that
   helps Whisper recognize your common words and phrases.
         """,
